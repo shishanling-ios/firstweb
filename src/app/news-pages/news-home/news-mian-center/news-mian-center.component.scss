@@ -1,0 +1,548 @@
+
+* {
+  line-height: 0;
+}
+
+.container {
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  //background-color: #1ebf3f;
+}
+
+.container nz-list {
+  padding: 0px;
+}
+
+.demo-infinite-container {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  background-color: red;
+  line-height: 0;
+}
+
+.nz-list-item-pandding-margin-zore {
+  display: flex;
+  width: 100%;
+
+  padding: 0;
+  margin: 0px;
+
+  .content_details_Box {
+    flex: 1;
+    float: left;
+    margin-top: 17px;
+    margin-left: 15px;
+    margin-right: 0;
+  }
+
+  &:hover {
+    background-color: #f8f8f8;
+  }
+
+  nz-image {
+    float: left;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    width: 140px;
+  }
+
+  .newTitle {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 15px;
+    font: normal 20px/26px "Microsoft Yahei";
+    min-height: 40px;
+    padding-bottom: 14px;
+  }
+
+  .news_tag {
+    margin-left: 0px;
+    width: auto;
+    height: 21px;
+    float: left;
+
+    .keywords {
+      float: left;
+      _display: inline;
+      padding-right: 4px;
+      height: 12px;
+      line-height: 11px;
+      margin-top: 4px;
+      border-right: 1px solid #bbb;
+      max-width: 180px;
+
+      margin-left: 10px;
+    }
+
+    .keywords a {
+      font: normal 12px/12px "SimSun";
+      color: #888;
+      margin-right: 7px;
+      text-decoration: none;
+    }
+
+    .keywords a:hover {
+      color: #ff3333;
+    }
+
+    span {
+      margin-left: 10px;
+      font: normal 12px/21px "SimSun";
+      color: #bbb;
+    }
+
+  }
+
+  .link_more {
+    padding: 2px 8px 0 8px;
+    border: 1px solid red;
+    border-radius: 2px;
+    line-height: 100%;
+    height: 100%;
+    float: left;
+
+    &:hover:before {
+      right: 6px;
+      filter: alpha(opacity=100);
+      opacity: 1;
+      transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+    }
+
+
+
+    em {
+      color: red;
+      //position: relative;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      white-space: nowrap;
+      word-wrap: break-word;
+      word-break: break-all;
+      font-style: normal;
+      font: normal 11px "Microsoft Yahei";
+    }
+
+    &:hover em {
+      position: relative;
+      color: red;
+      -webkit-transform: translate(-4px, 0);
+      -moz-transform: translate(-4px, 0);
+      -o-transform: translate(-4px, 0);
+      transform: translate(-4px, 0);
+      display: inline-block;
+    }
+
+
+  }
+
+  .share-box {
+    float: right;
+    height: 27px;
+    width: auto;
+    margin-top: -5px;
+    line-height: 27px;
+
+    //跟帖
+    .post_recommend_tie {
+      margin-left: 10px;
+      margin-top: 3.5px;
+      height: 20px;
+      width: 75px;
+      float: right;
+      overflow: hidden;
+
+      .post_recommend_tie_wrap {
+        -webkit-transition:margin-top 0.3s;
+        -o-transition:margin-top 0.3s;
+        transition:margin-top 0.3s;
+        .post_recommend_tie_icon {
+          display:block;
+          padding-left:26px;
+          background-position:-203px -109px;
+          color:#bbb;
+        }
+        span {
+          margin-top: 0;
+          display:block;
+          color:#f33;
+        }
+      }
+
+      &:hover .post_recommend_tie_wrap{
+        margin-top: -30px;
+      }
+
+      .post_recommend_tie_icon {
+        display: block;
+        padding-left: 26px;
+        line-height: 20px;
+        width: 20px;
+        height: 20px;
+        background-position: -203px -109px;
+        color: #bbb;
+      }
+
+      .icons {
+        background-image: url(http://static.ws.126.net/f2e/modules/shares/images/sprite0613v2.png);
+        //不重复
+        background-repeat: no-repeat;
+        //透明色
+        background-color: transparent
+      }
+
+      .post_recommend_tie_text {
+        color: red;
+        display: block;
+        font: 12px/20px Arial, "Sim sun";
+        i{
+          display: inline-block;
+          width: 26px;
+          font-style: normal;
+          color: #f33;
+        }
+      }
+    }
+
+
+    //分享button
+    .shares-button-box{
+      width: 36px;
+      height: 26px;
+      float: left;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      border-color: #fff;
+      .shares-button{
+        //position: absolute;
+        display: block;
+        *display: block;
+        *zoom: 1;
+        width: 36px;
+        height: 26px;
+        background: url(http://static.ws.126.net/f2e/modules/shares/images/sprite0613v3.png) no-repeat -196px -125px;
+        cursor: pointer;
+        font-size: 1px;
+
+      }
+      &:hover {
+        border-color:#ddd;
+        background-color:#fff;
+        z-index: 3;
+      }
+      .shares-list-box{
+        background: white;
+        text-align: left;
+        position: absolute;
+        margin-top: -1px;
+        z-index: 2;
+        right: 85px;
+        width: 105px;
+        height: 134px;
+        display: none;
+        border: 1px solid #ddd;
+        border-radius: 3px 0 3px 3px;
+        //overflow: hidden;
+        ul{
+          border-radius: 3px 0 3px 3px;
+          margin: 5px;
+          position: relative;
+          padding: 0px 0px;
+          background: #fff;
+          z-index: 99;
+          margin: 0;
+          color: #999;
+          list-style: none;
+        }
+        //可以
+        /*
+        理解为 第一个ul中的所有li
+        ul:first-child li {}
+        理解为ul中的第一个li.
+        ul li:first-child{}
+         */
+        ul li:last-child{
+          border-bottom: 0px solid transparent;
+        }
+
+
+
+        li{
+          margin: 0px 5px 0 10px;
+          padding: 5px 0 0 0 ;
+          height: 32.5px;
+          width: auto;
+          list-style: none;
+          border-bottom: 1px solid #eaeaea;
+
+
+          a {
+            width: 100%;
+            height: 100%;
+            color: #262626;
+            display: block;
+
+            &:hover {
+              color: red;
+            }
+          }
+
+          &:hover{
+            color: red;
+          }
+          &:hover .yixin{
+            background-position: -240px -177px;
+          }
+          &:hover .weixin{
+            background-position: -265px -177px;
+          }
+          &:hover .sina{
+            background-position: -290px -177px;
+          }
+          &:hover .qzone{
+            background-position: -315px -177px;
+          }
+
+        }
+        .share-icon{
+          float: left;
+          margin: 0;
+          padding: 0;
+          width: 24px;
+          height: 24px;
+          background:url(http://static.ws.126.net/f2e/modules/shares/images/sprite0613v3.png) no-repeat;
+          -webkit-transition:background 0.3s cubic-bezier(.17, .67, .88, 1.25), color 0.2s linear;
+          -moz-transition:background 0.3s cubic-bezier(.17, .67, .88, 1.25), color 0.2s linear;
+          -o-transition:background 0.3s cubic-bezier(.17, .67, .88, 1.25), color 0.2s linear;
+          transition:background 0.3s cubic-bezier(.17, .67, .88, 1.25), color 0.2s linear;
+        }
+
+        .yixin{
+          background-position: -240px -152px;
+        }
+        .weixin{
+          background-position: -265px -152px;
+        }
+        .sina{
+          background-position: -290px -152px;
+        }
+        .qzone{
+          background-position: -315px -152px;
+        }
+
+        .share-text{
+          height: 28px;
+          line-height: 24px;
+          font-size: 12px;
+          margin-left: 12px;
+          float: left;
+        }
+        //button和弹出ul之间的遮瑕分割线
+        .share_divider{
+          display: block;
+          width: 34px;
+          height: 1px;
+
+          background: white;
+          position: absolute;
+          right: 0px;
+          top: -1px;
+          z-index: 100;
+        }
+        //遮盖物
+        &::before {
+
+        }
+
+      }
+
+      .shares-weixin-QRCode-box{
+        display: none;
+        position: absolute;
+        padding: 14px;
+        top: -26px;
+        width: 130px;
+        height: 160px;
+        right: -155px;
+        background: white;
+
+        border: 1px solid #ddd;
+        border-radius: 3px 3px 3px 3px;
+
+        .QRCode{
+          width: 102px;
+          height: 102px;
+        }
+
+
+        .qrc-des{
+          color: rgb(38, 38, 38);
+          max-lines: 2;
+          line-height: 13px;
+          text-align: left;
+          font-size: 11px;
+          margin-top: 10px;
+          width: 102px;
+          height: 40px;
+        }
+
+      }
+
+      .weixin-a:hover .shares-weixin-QRCode-box{
+        display: block;
+      }
+
+    }
+  }
+
+
+}
+
+nz-list {
+  //background-color: purple;
+  padding: 0px 24px 0px 24px;
+
+  .text-news {
+    margin-top: 17px;
+    width: 100%;
+
+    a {
+      font-size: 18px;
+      color: #171717;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  .main-center-banner {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+  }
+
+  .main-center-carousel {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.newsdata_wrap {
+
+  width: 100%;
+  background: #f7f9fa;
+  //position: relative;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  height: 50px;
+  top: 45px;
+  ul {
+    background: #f7f9fa;
+    float: left;
+    height: 50px;
+    padding: 0px;
+    display: flex;
+    li {
+      float: left;
+      display: inline;
+      a {
+        display: block;
+        width: 65px;
+        height: 50px;
+        line-height: 50px;
+        font: normal 16px/50px;
+        text-align: center;
+        color: #404040;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+      }
+      .a_current {
+        background: #f04343;
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+  }
+  .more {
+    float: left;
+    width: 80px;
+    height: 50px;
+    overflow: hidden;
+    padding-left: 16px;
+    font: normal 16px/50px;
+    background: url('https://static.ws.126.net/163/f2e/news/index2016_rmd/images/sprite_img20221206.png') no-repeat -279px -948px;
+    line-height: 50px;
+    cursor: default;
+
+  }
+  .more_current {
+    background-color: #f34540;
+    color: #fff;
+    cursor: pointer;
+    background-position: -279px -314px;
+  }
+  .more_hover {
+    background-color: #f34540;
+    color: #fff;
+    cursor: pointer;
+    background-position: -279px -582px;
+  }
+  .more_list {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 0px;
+    top: 50px;
+    background: rgba(247, 247, 247, 0.95);
+    z-index: 999;
+    display: none;
+  }
+  .more_list a {
+    float: left;
+    width: 65px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #404040;
+
+    &.more_list_a_hover {
+      font-weight: bold;
+      color: #f04343;
+    }
+
+    &:hover {
+      color: #f04343;
+    }
+
+    //&:active~.more_list {
+    //  display: none;
+    //}
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+:host{
+  width: 100%;
+}
+
+.container{
+  width: 100%;
+  height: 45px;
+  position: relative;
+  display: flex;
+  button{
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+  }
+
+
+}
+
+
+.leftContent{
+  height: 45px;
+  background-color: #333;
+  display: flex;
+  flex: 1;
+  //float: left;
+}
+
+.rightContext{
+  flex: 0;
+  background-color: #333;
+  display: flex;
+
+}
+
+
+//他的作用,高度和container 一致,然后鼠标移动到上面做一些操作.
+.text-box{
+
+}
+
+.label{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10.5px;
+  height: 19px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+.text-box:hover .label{
+  border-bottom: 1px solid white;
+}
+
+.button-box{
+
+}
+
+.button-box:hover{
+  background-color: #171717;
+}
+
+.menuBtnBox{
+  margin-top:9px;
+  color:white;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 14px;
+  display: flex;
+}
+
+//公开课label
+
+.MOOCLabel{
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.divider-line{
+  border-left: 1px solid rgba(195, 195, 195, 0.3);
+}
+
+.icon-arrows{
+  margin-left: 5px;
+  margin-top: 8.5px;
+  width: 8px;
+  height: 8px;
+}
+
+
+
+
+
+

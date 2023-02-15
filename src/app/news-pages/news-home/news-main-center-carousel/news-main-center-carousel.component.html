@@ -1,0 +1,33 @@
+<ng-container>
+    <div class="container" (mouseover)="nzCarousel.nzAutoPlay=false" (mouseleave)="nzCarousel.nzAutoPlay=true" >
+        <div class="carousel-title-box">
+            <div class="carousel-title">
+                美丽的风景图
+            </div>
+            <div class="focus_ctrl">
+                <ng-container *ngFor="let _ of datas;let i = index">
+                    <ng-container *ngIf="i==currentIndex">
+                        <span class="current" (mouseenter)="nzCarousel.goTo(i)" (click)="nzCarousel.goTo(i)"> </span>
+                    </ng-container>
+                    <ng-container  *ngIf="i!=currentIndex" >
+                        <span (mouseenter)="nzCarousel.goTo(i)" (click)="nzCarousel.goTo(i)"> </span>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+
+        <nz-carousel #nzCarousel (nzBeforeChange)="showChange($event)" nzDots="false">
+            <div nz-carousel-content *ngFor="let imgUrl of datas;let i = index" >
+                <img class="img-box" [src]="'./assets/main-center-carousel/carousel-'+(i+1)+'.png'" alt="banner">
+                <div class="img-title-background-gradient"></div>
+                <div class="img-title">这是美丽的风景-{{i+1}}</div>
+            </div>
+        </nz-carousel>
+        <a class="focus_next" (click)="nzCarousel.goTo(currentIndex+1)"></a>
+        <a class="focus_prev" (click)="nzCarousel.goTo((currentIndex-1)==-1?datas.length-1:(currentIndex-1))"></a>
+    </div>
+</ng-container>
+
+
+
+

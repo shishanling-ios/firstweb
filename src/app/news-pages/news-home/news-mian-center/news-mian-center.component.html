@@ -1,0 +1,116 @@
+<div class="container">
+    <cdk-virtual-scroll-viewport itemSize="73" class="demo-infinite-container">
+        <nz-list nzSplit="false">
+<!--            文字新闻-->
+            <nz-list-item *ngFor="let text of textNews;let i = index" >
+                <div [ngSwitch]="i" class="text-news">
+                    <a *ngSwitchCase="0" style="font-size: 24px;font-weight: bold">{{text}}</a>
+                    <a *ngSwitchCase="1" style="font-size: 19px">{{text}}</a>
+                    <a *ngSwitchDefault>{{text}}</a>
+                </div>
+            </nz-list-item>
+<!--            广告-->
+            <nz-list-item>
+                <img class="main-center-banner" src="./assets/news-home-main-center-banner2.png" alt="banner">
+            </nz-list-item>
+<!--            分割线-->
+            <nz-divider style="margin: 15px 0 0 0 "></nz-divider>
+<!--            轮播图-->
+            <nz-list-item style="padding: 0">
+                <app-news-main-center-carousel class="main-center-carousel"></app-news-main-center-carousel>
+            </nz-list-item>
+
+            <nz-divider style="margin: 35px 0 0 0;background-color: red"></nz-divider>
+
+            <div class="newsdata_wrap">
+                <ul>
+                    <li *ngFor="let text of navbarDataSource;let j = index" (mouseover)="navItemHover(j)">
+                        <div *ngIf="navIndex == j">
+                            <a class="a_current">{{text}}</a>
+                        </div>
+                        <div *ngIf="navIndex != j">
+                            <a >{{text}}</a>
+                        </div>
+                    </li>
+                </ul>
+                <div id="more" class="more" (mouseover)="moreShowChannel()"
+                     (mouseout)="moreHideChannel()"> {{isSelectedMore() ? curretType:"更多"}}
+                    <div #more_list id="more_list"  class="more_list">
+                        <div *ngFor="let text of moreNavDataSource;let k = index" (click)="clickMoreItem(k)">
+                            <div *ngIf="k == moreIndex" >
+                                <a class="more_list_a_hover">{{text}}</a>
+                            </div>
+                            <div *ngIf="k != moreIndex">
+                                <a >{{text}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nz-list-item  class="nz-list-item-pandding-margin-zore" *ngFor="let item of listDatas;let j = index">
+
+                <nz-image nzWidth="140" [nzSrc]="item.imgurl"></nz-image>
+                <div class="content_details_Box">
+                    <h3 class="newTitle">
+                        {{item.title}}
+                    </h3>
+                    <div class="news_tag">
+                        <a href='http://localhost:4200/identy' class='link_more'><em>新闻</em></a>
+                        <div *ngIf="item.keywords.length != 0" class="keywords">
+                            <ng-container class="keywords" *ngFor="let key of item.keywords">
+                                <a class="">{{key.keyname}}</a>
+                            </ng-container>
+                        </div>
+                        <span [innerHtml]="calcTime(item.time)"></span>
+                    </div>
+                    <div class="share-box">
+
+                        <div class="post_recommend_tie">
+                            <div class="post_recommend_tie_wrap">
+                                <span class="post_recommend_tie_icon icons">{{item.tienum}}</span>
+                                <span class="post_recommend_tie_text" style="margin-top: 10px"><i>跟帖</i>{{item.tienum}}</span>
+                            </div>
+
+                        </div>
+                        <div class="shares-button-box" (mouseover)="shareShow(share_list)" (mouseleave)="shareHide(share_list)" >
+                            <div class="shares-button"></div>
+                            <!--这里需要使用ts控制它的displ-->
+                            <div #share_list class="shares-list-box">
+                                <ul>
+                                    <li><a><span>
+                                        <i class="share-icon yixin"></i>
+                                        <span class="share-text">易信</span>
+                                    </span></a></li>
+                                    <li (mouseenter)="weixinShareShow(QRCodeBox)" (mouseleave)="weixinShareHide(QRCodeBox)" ><a><span>
+                                        <i class="share-icon weixin"></i>
+                                        <span class="share-text">微信</span>
+                                    </span></a></li>
+                                    <li><a><span>
+                                        <i class="share-icon sina"></i>
+                                        <span class="share-text">微博</span>
+                                    </span></a></li>
+                                    <li><a><span>
+                                        <i class="share-icon qzone"></i>
+                                        <span class="share-text">朋友圈</span>
+                                    </span></a></li>
+                                </ul>
+                                <div #QRCodeBox class="shares-weixin-QRCode-box">
+                                    <qr-code class="QRCode" value="https://www.pgyer.com/NwmT" ></qr-code>
+                                    <div class="qrc-des">
+                                        用微信扫描二维码
+                                        分享至好友和朋友圈
+                                    </div>
+                                </div>
+                                <div class="share_divider"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nz-list-item>
+        </nz-list>
+
+
+
+    </cdk-virtual-scroll-viewport>
+</div>

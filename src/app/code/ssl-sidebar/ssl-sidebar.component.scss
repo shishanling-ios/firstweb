@@ -1,0 +1,36 @@
+.mat-list-base {
+  padding-top: 25px;
+  .mat-list-item {
+    color: rgba(0,0,0,.65);
+  }
+}
+.mat-nav-list {
+  .mat-list-item {
+    transition: 300ms;
+    &:hover, &.active {
+      background: #fbe9e1;
+      color: #ee6736;
+    }
+  }
+  .icon-right {
+    font-size: 14px;
+    font-weight: bolder;
+    color: #999;
+    &.down {
+      transform: rotate(90deg);
+    }
+  }
+  .sub-nav {
+    overflow: hidden;
+    padding-left: 47px;
+    .mat-list-item {
+      height: 45px;
+    }
+    // .iconxingzhuang {
+    //   font-size: 20px;
+    // }
+    // .icondaochu {
+    //   font-size: 22px;
+    // }
+  }
+}

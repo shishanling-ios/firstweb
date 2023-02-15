@@ -1,0 +1,70 @@
+
+<ng-container class="root-test">
+  <div class="mat-elevation-z8">
+    <div class="table-box">
+      <perfect-scrollbar>
+        <div class="data-type">待处理</div>
+        <table mat-table class="full-width-table" matSort aria-label="Elements">
+          <ng-container *ngFor="let objc of dataStructure" [matColumnDef]="objc.value" >
+            <th mat-header-cell *matHeaderCellDef [style.width]="objc.width" sticky="true">
+              <div class="ellipsis">{{objc.key}}</div>
+            </th>
+            <td mat-cell *matCellDef="let row" [style.width]="objc.width">
+              <div class="ellipsis">
+                <ng-container [ngSwitch]="objc.value">
+              <span *ngSwitchCase="'channel'">
+                <i mat-list-icon [ngClass]="['iconfont', 'app-icon', 'icon-weixin']"></i>
+              </span>
+                  <ng-container *ngSwitchCase="'ai'">
+                    AE
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'name'">
+                    {{row.app.name}}
+                  </ng-container>
+                  <ng-container  *ngSwitchCase="'content'" style="min-width: 0px;">
+                    <div class="content-text" style="min-width: 0px;" [innerHTML]="row.content"></div>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'created_at'">
+                    {{row.created_at | date:'yyyy-MM-dd HH:mm:ss'}}
+                  </ng-container>
+                </ng-container>
+              </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="handle" style="min-width: 190px;" >
+            <th class="ellipsis" mat-header-cell *matHeaderCellDef sticky="true">关于AE?<i class="iconfont icon-sort" [class.active]="ordering.includes('-identify_at')" (click)="sortData('-identify_at')"></i></th>
+            <td mat-cell *matCellDef="let row" style="color:#999; background-color: red">
+              <div class="cell-handle ellipsis">
+                <ng-container >
+                  <!-- 提示 -->
+                  <button class="yesBtn" mat-raised-button color="warn" >
+                    {{ '是' }}
+                  </button>&ngsp;&ngsp;&ngsp;
+                  <button class="noBtn" mat-raised-button>
+                    {{ '否' }}
+                  </button>
+                </ng-container>
+              </div>
+            </td>
+
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </perfect-scrollbar>
+      <mat-paginator class="tf-test" #paginator
+                     [length]="dataSource.length"
+                     [pageIndex]="0"
+                     [pageSize]="10"
+                     [pageSizeOptions]="[5, 10, 20]"
+                     aria-label="Select page">
+      </mat-paginator>
+    </div>
+  </div>
+</ng-container>
+
+
+

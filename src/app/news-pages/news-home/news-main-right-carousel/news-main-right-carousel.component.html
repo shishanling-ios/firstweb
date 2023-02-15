@@ -1,0 +1,32 @@
+<ng-container>
+    <div class="container" (mouseover)="nzCarousel.nzAutoPlay=false" (mouseleave)="nzCarousel.nzAutoPlay=true" >
+        <nz-carousel #nzCarousel (nzBeforeChange)="showChange($event)" nzAutoPlay="true" nzDots="false">
+            <div nz-carousel-content *ngFor="let imgUrl of dataSource;let i = index" >
+                <img class="img-box" [src]="imgUrl.src" alt="banner">
+                <div class="img-title-background-gradient"></div>
+                <div class="img-title">{{imgUrl.title}}</div>
+            </div>
+        </nz-carousel>
+        <div class="focus_ctrl-box">
+
+            <div class="flex-view"></div>
+            <div class="focus_ctrl">
+                <ng-container *ngFor="let _ of dataSource;let i = index">
+                    <ng-container *ngIf="i==currentIndex">
+                        <span class="current" (mouseenter)="nzCarousel.goTo(i)" (click)="nzCarousel.goTo(i)"> </span>
+                    </ng-container>
+                    <ng-container  *ngIf="i!=currentIndex" >
+                        <span (mouseenter)="nzCarousel.goTo(i)" (click)="nzCarousel.goTo(i)"> </span>
+                    </ng-container>
+                </ng-container>
+            </div>
+            <div class="flex-view"></div>
+        </div>
+        <a class="focus_next" (click)="nzCarousel.goTo(currentIndex+1)"></a>
+        <a class="focus_prev" (click)="nzCarousel.goTo((currentIndex-1)==-1?dataSource.length-1:(currentIndex-1))"></a>
+    </div>
+</ng-container>
+
+
+
+

@@ -1,0 +1,31 @@
+:host {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+.content{
+  max-width: 100%;
+  flex: 1;
+  display: flex;
+  //position: relative;
+  overflow: hidden;
+  background-color: yellow;
+}
+
+.triangle02{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  padding-top: 25px;
+  text-align: center;
+  top: -10px;
+  right: 0px;
+  color: white;
+  //-webkit-clip-path: polygon(0px 50px, 50px 0px, 100px 0px);
+  //clip-path: polygon(0px 50px, 50px 0px, 100px 50px);
+  -webkit-clip-path: polygon(0px 50px, 50px 0px, 100px 0px);
+  clip-path: polygon(0px 0px, 50px 0px, 50px 50px);
+  //transform: rotate(45deg);
+}

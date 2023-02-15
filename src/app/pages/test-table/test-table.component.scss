@@ -1,0 +1,158 @@
+
+
+:host ::ng-deep {
+  .mat-column-content {
+    flex: 1;
+  }
+  mat-cell, mat-header-cell, mat-footer-cell {
+    // 兼容ie
+    min-height: 20px;
+    justify-content: center;
+    flex: none;
+  }
+  mat-cell:first-of-type, mat-header-cell:first-of-type, mat-footer-cell:first-of-type {
+    padding-left: 0;
+  }
+  mat-cell:last-of-type, mat-header-cell:last-of-type, mat-footer-cell:last-of-type {
+    padding-right: 0;
+  }
+  .mat-chip-list-wrapper {
+    display: block;
+  }
+  .mat-chip {
+    color: #fff;
+    &:after {
+      content: none;
+    }
+  }
+
+}
+
+.container {
+  padding: 12px;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  //position: relative;
+  box-sizing: border-box;
+  background-color: yellow;
+}
+
+
+
+
+
+.div {
+  /*宽高为0*/
+  width: 0;
+  height: 0;
+  /*在三角形底边设置一个边界颜色/
+  border-top: 20px solid red;
+  /*其它3边设置相同颜色，*/
+  border-bottom: 20px solid white;
+  border-left: 20px solid white;
+  border-right: 20px solid white;
+}
+.table-box {
+  width: 100%;
+  min-height: 50px;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+
+  .ellipsis {
+    padding: 8px 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .noBtn {
+    background: #34c749!important;
+    width: 46px;
+    height: 33px;
+    color: #fff!important;
+    border: 3px solid #34c749;
+    border-radius: 5px;
+  }
+  .yesBtn {
+    background: #fc615d!important;
+    color: #fff!important;
+    width: 46px;
+    height: 33px;
+    border: 3px solid #fc615d;
+    border-radius: 5px;
+  }
+
+}
+
+.icon-sort {
+  &.active {
+    color: #f94883;
+  }
+}
+
+.msg-details{
+  height: 268px;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row{
+  height: 0;
+}
+
+.example-element-row:active{
+  height: 0;
+}
+
+.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+.example-element-row:not(.example-expanded-row):active {
+
+  background: #efefef;
+}
+
+mat-row.example-element-row{
+  height: 0;
+}
+.example-element-row{
+  height: 0;
+}
+
+
+
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+  max-width: 100%;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}

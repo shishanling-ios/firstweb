@@ -1,0 +1,29 @@
+.header {
+  height: 100%;
+  background: #ee6736;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  >.logo {
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+    line-height: 1;
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: normal;
+    color: #fff;
+    >.logo-txt{
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+  .icon-caidan {
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+.app-toolbar-user {
+  height: 100%;
+}

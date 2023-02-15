@@ -1,0 +1,61 @@
+<div id="scrollContainer" class="scrollContainer">
+    <app-news-header class="app-news-header"></app-news-header>
+    <!--    二级导航-->
+    <div class="VFP-navbar">
+        <ng-container *ngFor="let title of navBarData">
+            <ng-container [ngSwitch]="title">
+                <ng-container *ngSwitchCase="navBarData[0]">
+                    <a class="first-a">{{title}}</a>
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                    <a (click)="handleScroll()">{{title}}</a>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </div>
+    <!--banner图 -->
+    <div class="content-box">
+        <img class="top-banner" src="./assets/news-top-banner.png">
+    </div>
+    <div style="height: 20px"></div>
+    <!--logo-->
+    <div class="content-box">
+        <img src="./assets/news-logo.png" style="width: 155px;height: 40px">
+    </div>
+    <!--    分割线-->
+    <div class="red-divide-line"></div>
+    <!--    三级导航-->
+    <div class="content-box">
+        <nz-breadcrumb>
+            <ng-container *ngFor="let title of thirdStageNavData">
+                <ng-container [ngSwitch]="title">
+                    <ng-container *ngSwitchCase="thirdStageNavData[0]">
+                        <nz-breadcrumb-item>
+                            <a style="padding-left: 0">{{title}}</a>
+                        </nz-breadcrumb-item>
+                    </ng-container>
+                    <ng-container *ngSwitchDefault>
+                        <nz-breadcrumb-item (click)="handleScroll()">
+                            <a>{{title}}</a>
+                        </nz-breadcrumb-item>
+                    </ng-container>
+                </ng-container>
+
+            </ng-container>
+        </nz-breadcrumb>
+    </div>
+    <!--    新闻内容-->
+    <div class="content-box" style="margin-top: 10px;margin-bottom: 10px">
+        <div id="main-left-news" class="main-left-news" >
+            <app-news-mian-left ></app-news-mian-left>
+            <div id="groundGlass" class="groundGlass"></div>
+        </div>
+        <div id="main-center-news" class="main-center-news">
+            <div><app-news-mian-center></app-news-mian-center></div>
+        </div>
+        <div id="main-right-news" class="main-right-news">
+            <app-news-mian-right></app-news-mian-right>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,102 @@
+<div class="flex-container">
+  <nz-tabset>
+<!--    全部标签-->
+    <nz-tab [nzTitle]="AllTab">
+      <ng-template #AllTab style="margin-left: 0px">
+        <div class="All-Tab"
+             [ngClass]="{'select':(currentPageType == 0)}">
+          <div class="text" (click)="changePage(0)">
+            全部
+          </div>
+        </div>
+      </ng-template>
+      <div class="mat-elevation-z8">
+        <app-dialog-ai-estimate ></app-dialog-ai-estimate>
+      </div>
+    </nz-tab>
+<!--    AE标签-->
+    <nz-tab [nzTitle]="AETab">
+      <ng-template #AETab>
+        <div class="All-Tab"
+             [ngClass]="{'AE-WR-Tab':(currentPageType == 1 || currentPageType == 2)}"
+             style="background: #FFEFA9">
+          <ng-container *ngIf="currentPageType == 1 || currentPageType == 2" >
+            <div class="sub-tab">
+              <div class="sub-title" (click)="changePage(1)">
+                AE
+              </div>
+              <div class="sub-title"
+                   [ngClass]="{'st-select':currentPageType==1}" (click)="changePage(1)">AI预判断</div>
+              <div class="sub-title"
+                   [ngClass]="{'st-select':currentPageType==2}" (click)="changePage(2)">已提醒</div>
+            </div>
+          </ng-container >
+
+          <ng-container *ngIf="currentPageType != 1 && currentPageType != 2">
+            <div class="text" (click)="changePage(1)">
+              AE
+            </div>
+          </ng-container>
+        </div>
+      </ng-template>
+      AE
+    </nz-tab>
+    <nz-tab [nzTitle]="WRTab">
+      <ng-template #WRTab>
+        <div class="All-Tab"
+             [ngClass]="{'AE-WR-Tab':(currentPageType == 3 || currentPageType == 4)}"
+             style="background: #FFD0B2">
+          <ng-container *ngIf="currentPageType == 3 || currentPageType == 4" >
+            <div class="sub-tab">
+              <div class="sub-title" (click)="changePage(3);getData()">
+                WR
+              </div>
+              <div class="sub-title"
+                   [ngClass]="{'st-select':currentPageType==3}" (click)="changePage(3)">AI预判断</div>
+              <div class="sub-title"
+                   [ngClass]="{'st-select':currentPageType==4}" (click)="changePage(4)">已提醒</div>
+            </div>
+
+          </ng-container >
+
+
+          <ng-container *ngIf="currentPageType != 3 && currentPageType != 4">
+            <div class="text" (click)="changePage(3)">
+              WR
+            </div>
+          </ng-container>
+
+
+        </div>
+      </ng-template>
+      <div style="background-color: white">WR</div>
+    </nz-tab>
+    <nz-tab [nzTitle]="OLTab" >
+      <ng-template #OLTab>
+        <div class="All-Tab"
+             [ngClass]="{'AE-WR-Tab':(currentPageType == 5 || currentPageType == 6)}"
+             style="background: #FEC8E2">
+          <ng-container *ngIf="currentPageType == 5 || currentPageType == 6" >
+            <div class="sub-tab">
+              <div class="sub-title" (click)="changePage(5)">
+                OL
+              </div>
+              <div class="sub-title"
+                   [ngClass]="{'st-select':currentPageType==5}" (click)="changePage(5)">AI预判断</div>
+              <div class="sub-title"
+                   [ngClass]="{'st-select':currentPageType==6}" (click)="changePage(6)">已提醒</div>
+            </div>
+          </ng-container >
+
+          <ng-container *ngIf="currentPageType != 5 && currentPageType != 6">
+            <div class="text" (click)="changePage(5)">
+              OL
+            </div>
+          </ng-container>
+        </div>
+      </ng-template>
+      OL
+    </nz-tab>
+  </nz-tabset>
+</div>
+

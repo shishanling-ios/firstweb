@@ -1,0 +1,185 @@
+:host{
+  width: 100%;
+  height: 100%;
+}
+
+
+.scrollContainer{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.content-box{
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+//topbanner
+.top-banner{
+  margin-top: 10px;
+  width: 960px;
+  height: 100px;
+}
+
+.app-news-header {
+  z-index: 999;
+  position: absolute;
+}
+//二级导航条
+.VFP-navbar{
+  margin-top: 55px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  a{
+    border-left: 1px solid #ddd;
+    padding:0 6px 0 6px;
+    color: #171717;
+    font-size: 12px;
+  }
+  a:hover{
+    color: red;
+  }
+  .first-a{
+    border-left:none;
+  }
+}
+
+nz-breadcrumb{
+  margin-top: 10px;
+}
+
+nz-breadcrumb-item {
+  color: #171717;
+  font-size: 16px;
+  a{
+    color: #171717;
+    &:hover{
+      color: red;
+    }
+  }
+}
+
+//上面是红色分割线上面的内容
+
+//这是红色分割线
+
+.red-divide-line{
+  background-color: red;
+  height: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 8px;
+}
+
+ //960 1380  1200
+
+
+//下面是新闻布局
+
+//left 200px  center 600px right 300px  space 50px
+.main-left-news{
+  position: relative;
+  width: 200px;
+  margin-right: 0px;
+  display: none;
+  overflow: hidden;
+  float: left;
+}
+
+.main-left-news-float{
+  position: absolute;
+  top: 45px;
+  bottom: 50px;
+  width: 200px;
+  margin-right: 45px;
+  display: block;
+  float: left;
+
+  //渐变透明遮光板,
+  .groundGlass{
+    //渐变高度80 总高度140
+    height: 80px;
+    width: 200px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), #ffffff);
+    position: fixed;
+    bottom: 50px;
+    display: none;
+  }
+}
+//.main-left-news-float::-webkit-scrollbar {
+//  display: none; /* Chrome Safari */
+//}
+
+.main-center-news {
+  width: 600px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  position: relative;
+  float: left;
+}
+
+.main-center-news-float{
+  width: 600px;
+  margin-left: 250px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  //background-color: orange;
+  position: relative;
+  float: left;
+}
+
+
+.main-right-news{
+  width: 300px;
+  margin-left: 50px;
+  float: left;
+}
+@media screen and (min-width: 1380px) {
+  .content-box{
+    width: 1200px;
+  }
+  //
+  .VFP-navbar a{
+    padding: 0 12px 0 12px;
+  }
+  nz-breadcrumb-item a{
+    padding: 0 12px 0 12px;
+  }
+  .main-left-news {
+    width: 200px;
+    display: block;
+    margin-right: 50px;
+  }
+  .main-left-news-float{
+    display: block;
+    position: absolute;
+  }
+  .main-center-news-float {
+    margin-left: 250px;
+  }
+}
+
+
+@media screen and (max-width: 1379px) {
+  .main-left-news-float{
+    display: none;
+    position: relative;
+  }
+  .main-center-news-float {
+    margin-left: 0px;
+  }
+  //.main-left-news {
+  //  width: 1px;
+  //}
+}
+
+
+
+
+

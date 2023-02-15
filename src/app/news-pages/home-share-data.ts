@@ -1,0 +1,1 @@
+export var leftNewsIsFloat = false;

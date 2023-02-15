@@ -1,0 +1,52 @@
+<ng-container>
+    <div class="container">
+        <div class="content-div">
+            <div class="userInfoBox accepterBox">
+                <div class="title">信息接收方</div>
+                <div class="division-line"></div>
+                <img class="portrait" src="./assets/zjl.png" alt="一张图片">
+                <div class="user-name">周杰伦</div>
+                <div class="user-id">ID：231454624</div>
+                <div class="user-id">部门：娱乐部</div>
+            </div>
+
+
+            <div class="msgBox" >
+                <div style="display: flex; direction: ltr;">
+                    <div class="msgBox" style="margin-left: 0px;margin-top: 0px;">
+                        <div class="sendTime">2022-09-08  16:30:32</div>
+                        <i class="iconfont icon-shouqi" (click)="closeContentTr()"></i>
+                        <div class="msgTitle">信息内容</div>
+                        <div class="division-line"></div>
+                        <div *ngIf="msgType!='2'" style="height: 20px"></div>
+                        <div *ngIf="msgType=='2'" style="height: 14px"></div>
+                        <div *ngIf="msgType=='2'" class="voiceBox" >
+                            <i class="iconfont icon-audio"></i>
+                            <div class="audio-length">33”</div>
+                            <i class="iconfont icon-bofang"></i>
+                        </div>
+                        <div *ngIf="msgType=='2'" class="describe-title">转译内容：</div>
+                        <div class="msgContent">{{msgText}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="userInfoBox senderBox">
+                <div class="title">信息发送方</div>
+                <div class="division-line"></div>
+                <img class="portrait" src="./assets/lyf.png" alt="一张图片">
+                <div class="user-name">刘亦菲</div>
+                <div class="user-id">ID：231454624</div>
+                <div class="user-id">部门：演艺部</div>
+            </div>
+        </div>
+
+        <div class="button-box">
+            <button mat-button class="handleButton"  >定位到聊天</button>
+            <button class="handleButton">否</button>
+            <button class="handleButton">是</button>
+            <button style="border: none;background-color :transparent">?是否OFF-Label</button>
+        </div>
+    </div>
+
+</ng-container>

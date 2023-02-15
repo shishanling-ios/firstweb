@@ -1,0 +1,33 @@
+<mat-nav-list>
+  <!--循环-->
+  <ng-container *ngFor="let nav of sidebarMenu">
+    <!--如果需要展示-->
+    <ng-container *ngIf="nav.jview">
+      <!--如果子菜单是空的-->
+      <mat-list-item *ngIf="!nav.children" [routerLink]="nav.link">
+        <i mat-list-icon [ngClass]="['iconfont', nav.icon]"></i>
+        <span mat-line>{{ nav.text}}</span>
+      </mat-list-item>
+      <ng-container *ngIf="nav.children">
+        <mat-list-item  routerLinkActive="active" (click)="nav.isOpen = !nav.isOpen">
+          <i mat-list-icon [ngClass]="['iconfont', nav.icon]"></i>
+          <span mat-line>{{ nav.text + nav.isOpen }}</span>
+          <ng-container *ngIf="!nav.isOpen">
+            <i class="iconfont icon-right" [class.down]="nav.isOpen"></i>
+          </ng-container>
+          <ng-container *ngIf="nav.isOpen">
+            <i class="iconfont icon-xia" [class.down]="nav.isOpen"></i>
+          </ng-container>
+        </mat-list-item>
+        <div class="sub-nav" *ngIf="nav.isOpen" [@slideInOut]="nav.isOpen">
+          <ng-container  *ngFor="let subnav of nav.children">
+            <mat-list-item  *ngIf="subnav.jview" [routerLink]="subnav.link" routerLinkActive="active" >
+              <!-- <i mat-list-icon [ngClass]="['iconfont', subnav.icon]"></i> -->
+              <span mat-line>{{ subnav.text}}</span>
+            </mat-list-item>
+          </ng-container>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</mat-nav-list>

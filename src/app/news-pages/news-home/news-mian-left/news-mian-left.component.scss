@@ -1,0 +1,224 @@
+:host{
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.containerBox{
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  scrollbar-width: none; /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  box-sizing: border-box;
+}
+
+
+.containerBox::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+
+.container{
+  padding: 0px;
+  width: 100%;
+  height: 90%;
+  bottom: 0px;
+  overflow: auto;
+  //background-color: #1ebf3f;
+  position: relative;
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+
+.container nz-list {
+  padding: 0px;
+}
+
+
+.nz-list-item-pandding-margin-zore {
+  width: 100%;
+  padding: 0;
+  margin: 0px;
+}
+
+nz-list {
+  padding:0px 24px 0px 24px ;
+}
+
+
+.header-background{
+  background: white;
+  width: 100%;
+  height: 50px;
+}
+
+.news_left_header{
+
+  margin-top: 17px;
+  margin-bottom: 0px;
+  h2{
+    font-size:16px;
+    color:#404040;
+    line-height:16px;
+    padding:0px 0px 15px 0px;
+    margin-bottom: 0;
+    border-bottom:1px #eeeeee solid;
+    span{
+      border-left:3px #f34540 solid;
+      padding-left:10px;
+    }
+
+  }
+
+}
+.news_left_header-sticky{
+  //margin-bottom: 0px;
+  position: -webkit-sticky;
+  position:sticky;
+  width: 100%;
+  top: 17px;
+  h2{
+    font-size:16px;
+    color:#404040;
+    line-height:16px;
+    padding:0px 0px 15px 0px;
+    margin-bottom: 0;
+    border-bottom:1px #eeeeee solid;
+    span{
+      border-left:3px #f34540 solid;
+      padding-left:10px;
+    }
+  }
+
+}
+
+nz-list-item{
+  width: 100%;
+  margin: 0;
+  padding: 20px 0 0px 0;
+}
+
+//为了做这个效果要写两套item?
+.news_left_item{
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0 0 0 ;
+  margin:0;
+
+  .column_main{
+    text-align: left;
+    //大标题
+    .details{
+      margin: 10px 0 0px 0;
+      width: 100%;
+      height: auto;
+      h3{
+        text-align: left;
+        color: black;
+      }
+      //图片
+      .photo{
+        width: 0;
+        height: 0;
+        overflow:hidden;
+      }
+      //需要在TS中捕获hover然后更换class
+      h3:hover {
+        color: red;
+      }
+      //子新闻列表
+      ul{
+        margin-top: -15px;
+        padding: 0;
+        li{
+          padding-left: 10px;
+          text-align: left;
+          font-size: 12px;
+          height: 23px;
+          line-height: 23px;
+          position:relative;
+          font-family:"\5B8B\4F53", "宋体", Arial, sans-serif;
+          overflow: hidden;
+          &:hover{
+            color: #f34540;
+          }
+          &:after {
+            content:"";
+            background:#888888;
+            width:2px;
+            height:2px;
+            display:block;
+            position:absolute;
+            left:0;
+            top:50%;
+            margin-top:-2px;
+
+          }
+          &:hover:after {
+            background:#f34540;
+          }
+        }
+      }
+    }
+
+    .details_hover{
+      .photo{
+        width: 200px;
+        height: 90px;
+        overflow:hidden;
+        transition: width 1s, height 1s;
+        margin-bottom: 20px;
+      }
+
+    }
+
+  }
+}
+
+.tags {
+  width: 100%;
+  aspect-ratio: 31/200;
+  overflow:hidden;
+  line-height:300px;
+  display:inline-block;
+  background:url('https://static.ws.126.net/163/f2e/news/index2016_rmd/images/sprite_img20221206.png') no-repeat;
+}
+.tag_sd {
+  width:71px;
+  height:23px;
+  background-position:0px -98px;
+}
+.tag_caozhi {
+  width:46px;
+  height:26px;
+  background-position:-5px -292px;
+}
+.tag_qsyk {
+  width:89px;
+  height:34px;
+  background-position:0px -246px;
+}
+.tag_tanxinshe {
+  width:47px;
+  height:18px;
+  background-position:0px -336px;
+}
+.tag_yjws {
+  width: 90px;
+  height: 27px;
+  background-position: 0px -790px;
+}
+
+//
+
+
+
+
+
+
+
+

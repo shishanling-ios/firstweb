@@ -1,0 +1,167 @@
+:host{
+  height: 100%;
+  flex: 1;
+  display: flex;
+}
+
+
+.container {
+  padding: 12px;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  //position: relative;
+  box-sizing: border-box;
+  background-color: yellow;
+}
+
+.full-width-table {
+
+  width: 100%;
+}
+.icon-weixin {
+  color: #1ebf3f;
+}
+//
+//.content-text {
+//  margin-left: auto;
+//  margin-right: auto;
+//}
+
+.cell-handle .mat-raised-button{
+  color: #333;
+  font-weight: normal
+}
+
+
+.th-test {
+  height: 200px;
+}
+
+.tf-test {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.div {
+  /*宽高为0*/
+  width: 0;
+  height: 0;
+  /*在三角形底边设置一个边界颜色/
+  border-top: 20px solid red;
+  /*其它3边设置相同颜色，*/
+  border-bottom: 20px solid white;
+  border-left: 20px solid white;
+  border-right: 20px solid white;
+}
+.table-box {
+  //position: static;
+  //overflow: hidden;
+  width: 100%;
+  flex: 1;
+  .ellipsis {
+    padding: 8px 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .noBtn {
+    background: #34c749!important;
+    width: 46px;
+    height: 33px;
+    color: #fff!important;
+    border: 3px solid #34c749;
+    border-radius: 5px;
+  }
+  .yesBtn {
+    background: #fc615d!important;
+    color: #fff!important;
+    width: 46px;
+    height: 33px;
+    border: 3px solid #fc615d;
+    border-radius: 5px;
+  }
+
+}
+
+.icon-sort {
+  &.active {
+    color: #f94883;
+  }
+}
+.root-test{
+  top: 100px;
+  width: 100%;
+  height: 200px;
+}
+.stateChange{
+  position: sticky;
+  width: 100px;
+  height: 50px;
+  background: #f94883;
+  padding-top: 25px;
+  text-align: center;
+  right: -35px;
+  color: white;
+  transform: rotateZ(45deg);
+  z-index: 4;
+}
+
+.msg-details{
+  height: 268px;
+}
+
+
+//新的数据 这里不能删除.
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
